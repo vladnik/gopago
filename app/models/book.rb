@@ -7,4 +7,9 @@ class Book < ActiveRecord::Base
   def book_is_available
     errors.add(:base, "book is not available") unless available || available_was
   end
+
+  def toggle
+    available ? self.available = false : self.available = true
+    save
+  end
 end

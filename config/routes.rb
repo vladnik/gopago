@@ -1,5 +1,6 @@
 Gopago::Application.routes.draw do
   resources :books
+  get 'books/:id/toggle' => 'books#toggle', as: :toggle_book
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

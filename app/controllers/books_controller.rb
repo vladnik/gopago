@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy, :toggle]
 
   # GET /books
   def index
@@ -43,6 +43,12 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     redirect_to books_url, notice: 'Book was successfully destroyed.'
+  end
+
+  # GET /books/1/toggle
+  def toggle
+    @book.toggle
+    redirect_to books_url, notice: 'Book changed status successfully.'
   end
 
   private

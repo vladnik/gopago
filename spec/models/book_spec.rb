@@ -17,4 +17,13 @@ describe Book do
       book.should_not be_valid
     end
   end
+  describe "#toggle" do
+    it "switches availability" do
+      book.available.should be_true
+      book.toggle
+      book.available.should be_false
+      book.toggle
+      book.available.should be_true
+    end
+  end
 end

@@ -6,6 +6,7 @@
       <th>Title</th>
       <th>Available</th>
       <th>Status changed at</th>
+      <th>Action</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,6 +19,7 @@
         <td><%= book.title %></td>
         <td><%= book.available %></td>
         <td><%= book.status_changed_at %></td>
+        <td><%= link_to book.available ? 'Check Out' : 'Check In', toggle_book_path(book.id) %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
