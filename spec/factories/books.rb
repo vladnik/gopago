@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :book do
-    title "MyString"
-    available false
+    title "Some Title"
+    available true
     status_changed_at "2013-07-16 21:15:38"
   end
 end
