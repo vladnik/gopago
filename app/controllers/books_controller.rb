@@ -3,7 +3,8 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = Book.all
+    @books = Book.scoped
+    @books = @books.where("title LIKE ?", "%#{params[:search]}%") if params[:search]
   end
 
   # GET /books/1
